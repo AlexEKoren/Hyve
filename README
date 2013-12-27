@@ -1,0 +1,1 @@
+This version of Hyve was built in just 24 hours. It relies on the Parse framework to work which we have since moved away from. It is a standalone application that outsources a prime number computation which checks for primality across multiple devices. It is immutable, which means that the distributed code cannot be changed without updating the app which has since been changed.

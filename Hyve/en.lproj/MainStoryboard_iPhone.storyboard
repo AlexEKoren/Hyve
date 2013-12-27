@@ -1,23 +1,135 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
+        <scene sceneID="V3T-qf-aiq">
+            <objects>
+                <viewController id="Yu9-nE-AWj" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bG1-gD-w3r">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Hyve" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGB-qk-mW6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="202" id="Ecp-Ip-f14"/>
+                                    <constraint firstAttribute="height" constant="165" id="xxC-zt-oQv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="68"/>
+                                <color key="textColor" red="0.00010056873814853201" green="0.51915258290816324" blue="0.013268721502379623" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KGB-qk-mW6" firstAttribute="top" secondItem="bG1-gD-w3r" secondAttribute="top" constant="191" id="He7-8k-K7N"/>
+                            <constraint firstItem="KGB-qk-mW6" firstAttribute="centerX" secondItem="bG1-gD-w3r" secondAttribute="centerX" type="default" id="dC4-Ue-1YY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nts-L0-x0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-476" y="32"/>
+        </scene>
+        <!--Compute View-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="ComputeView" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HyveBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kse-35-TDG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="554" type="user" id="K0t-7p-FNo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9y2-cT-fFf">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="236" type="user" id="BFC-LT-H4V"/>
+                                    <constraint firstAttribute="width" constant="237" id="Qgz-xz-TBF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStart:" destination="2" eventType="touchUpInside" id="nlK-vy-JWu"/>
+                                </connections>
+                            </button>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iL6-CN-F0v">
+                                <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                            </containerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMz-y4-e2L">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="Nyy-Tj-uT2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLb-HK-EPa">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="JNR-YZ-zOH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iL6-CN-F0v" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="8J1-oa-bVa"/>
+                            <constraint firstItem="Kse-35-TDG" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Cxy-A2-tm1"/>
+                            <constraint firstItem="kLb-HK-EPa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" type="user" id="FZw-I0-5jH"/>
+                            <constraint firstAttribute="trailing" secondItem="sMz-y4-e2L" secondAttribute="trailing" constant="20" type="user" id="N8b-lQ-6GF"/>
+                            <constraint firstItem="9y2-cT-fFf" firstAttribute="centerX" secondItem="iL6-CN-F0v" secondAttribute="centerX" type="default" id="Q08-Lr-3jx"/>
+                            <constraint firstItem="9y2-cT-fFf" firstAttribute="top" secondItem="3" secondAttribute="top" constant="73" type="user" id="SEe-p2-DYX"/>
+                            <constraint firstItem="Kse-35-TDG" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="WJT-Qa-31e"/>
+                            <constraint firstAttribute="bottom" secondItem="iL6-CN-F0v" secondAttribute="bottom" constant="20" type="user" id="YqF-l8-NgX"/>
+                            <constraint firstItem="iL6-CN-F0v" firstAttribute="top" secondItem="9y2-cT-fFf" secondAttribute="bottom" constant="13" type="user" id="dIH-xP-RcK"/>
+                            <constraint firstItem="sMz-y4-e2L" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" type="user" id="iCx-u2-B1E"/>
+                            <constraint firstItem="Kse-35-TDG" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="kFA-Um-Xvv"/>
+                            <constraint firstItem="iL6-CN-F0v" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="kZX-GN-tQ7"/>
+                            <constraint firstItem="Kse-35-TDG" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="qXp-dZ-dpI"/>
+                            <constraint firstItem="kLb-HK-EPa" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" type="user" id="rEj-b3-leg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadImage" destination="Kse-35-TDG" id="KAA-Fx-69l"/>
+                        <outlet property="nowScoreLabel" destination="kLb-HK-EPa" id="Md3-NM-Qpd"/>
+                        <outlet property="startButtonAttributes" destination="9y2-cT-fFf" id="D8Q-WC-cay"/>
+                        <outlet property="totalScoreLabel" destination="sMz-y4-e2L" id="wtn-mi-8uZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="HyveBackground.png" width="640" height="1096"/>
+    </resources>
+    <classes>
+        <class className="ComputeView" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ComputeView.h"/>
+            <relationships>
+                <relationship kind="action" name="onStart:"/>
+                <relationship kind="outlet" name="loadImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nowScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="startButtonAttributes" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalScoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
